@@ -23,13 +23,13 @@ class _HomeScreenState extends State<HomeScreen> {
     final double initialLatitude = 8.5465282;
     final double initialLongitude = 76.9151412;
     final int numberOfMarkers = 30;
-    final double radius = 0.04; // Adjust the radius for random positions
+    final double radius = 0.03; // Adjust the radius for random positions
 
     for (int i = 0; i < numberOfMarkers; i++) {
       final double lat = initialLatitude +
-          Random().nextDouble() * (2 * radius) - radius;
+          Random().nextDouble() * (3 * radius) - radius;
       final double lng = initialLongitude +
-          Random().nextDouble() * (2 * radius) - radius;
+          Random().nextDouble() * (3 * radius) - radius;
 
       // Load the image byte data (change the image path accordingly)
       ByteData imageData = await rootBundle.load('assets/images/charge.png',);
