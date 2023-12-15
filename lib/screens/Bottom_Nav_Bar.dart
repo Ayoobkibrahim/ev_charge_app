@@ -1,3 +1,5 @@
+import 'package:ev_charge_app/screens/activity_screen.dart';
+import 'package:ev_charge_app/screens/community_page.dart';
 import 'package:ev_charge_app/screens/home_screen.dart';
 import 'package:ev_charge_app/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
@@ -81,13 +83,10 @@ class SearchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text('Search Page'),
-      // ),
-      body: Center(
-        child: Text('This is the Search Page'),
-      ),
-    );
+      
+      body: ActivityScreen()
+      );
+    
   }
 }
 
@@ -95,12 +94,8 @@ class FavoritesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text('Favorites Page'),
-      // ),
-      body: Center(
-        child: Text('This is the Favorites Page'),
-      ),
+      
+      body: CommunityScreen()
     );
   }
 }
