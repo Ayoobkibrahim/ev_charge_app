@@ -10,12 +10,10 @@ class RefreshTokenScreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            // Implement logic to refresh access token
-            // This could involve calling an API endpoint to refresh the token
-            // Upon successful token refresh, update the UI or navigate to another screen
-            // Example: AuthService().refreshToken();
+             
+            // AuthService().refreshToken();
             // After token refresh, navigate to the desired screen
-            Navigator.pushNamed(context, '/home'); // Replace '/home' with your desired route
+            Navigator.pushNamed(context, '/home'); 
           },
           child: Text('Refresh Token'),
         ),

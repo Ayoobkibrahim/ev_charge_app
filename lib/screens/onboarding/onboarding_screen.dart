@@ -97,7 +97,7 @@ class _OnboardingPagesState extends State<OnboardingPages> {
       ? FloatingActionButton(
           onPressed: () {
             _pageController.nextPage(
-              duration: Duration(milliseconds: 300),
+              duration: Duration(milliseconds: 30),
               curve: Curves.ease,
             );
           },
@@ -114,7 +114,7 @@ class _OnboardingPagesState extends State<OnboardingPages> {
               FloatingActionButton(
                 onPressed: () {
                   _pageController.previousPage(
-                    duration: Duration(milliseconds: 300),
+                    duration: Duration(milliseconds: 30),
                     curve: Curves.ease,
                   );
                 },
@@ -126,7 +126,7 @@ class _OnboardingPagesState extends State<OnboardingPages> {
                 onPressed: () {
                   if (_currentPage != pages.length - 1) {
                     _pageController.nextPage(
-                      duration: Duration(milliseconds: 300),
+                      duration: Duration(milliseconds: 30),
                       curve: Curves.ease,
                     );
                   } else {

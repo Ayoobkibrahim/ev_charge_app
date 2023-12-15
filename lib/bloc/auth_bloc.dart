@@ -12,10 +12,10 @@ class AuthBloc extends ChangeNotifier {
       if (response['success'] == true) {
         String token = response['token'];
 
-        // Save token using SharedPreferencesManager
+        
         await SharedPreferencesManager().setString('token', token);
 
-        // Notify listeners about successful login
+       
         notifyListeners();
       } else {
         throw Exception('Login failed');
@@ -32,7 +32,7 @@ class AuthBloc extends ChangeNotifier {
       if (token != null) {
         await _apiService.logout(token);
 
-        // Clear the saved token from SharedPreferences upon logout
+        
         await SharedPreferencesManager().remove('token');
 
         notifyListeners();

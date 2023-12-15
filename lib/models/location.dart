@@ -23,7 +23,7 @@ class Location {
       statusCode: json['statusCode'],
       feasibilityStatus: json['feasibilityStatus'],
       message: json['message'],
-      data: Data.fromJson(json['data']), // Assuming Data also has a fromJson method
+      data: Data.fromJson(json['data']), 
     );
   }
 

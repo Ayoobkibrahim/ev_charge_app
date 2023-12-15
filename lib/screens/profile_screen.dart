@@ -39,7 +39,7 @@ class _ProfilescreenState extends State<Profilescreen> {
               SizedBox(height: 40),
               V100001(),
               SizedBox(height: 10),
-              Copyright2022BpmPowerPvtLtdAllRightsReserved(),
+              Copyright(),
               SizedBox(height: 20),
         ]),
       ),
@@ -762,7 +762,8 @@ class Group33790 extends StatelessWidget {
                       ],
                     ),
                   ),
-                ),                                                                                                           Positioned(
+                ),
+                Positioned(
                   left: 19,
                   top: 15,
                   child: 
@@ -789,7 +790,8 @@ class Group33790 extends StatelessWidget {
                       ],
                     ),
                   ),
-                ),                                                                                                         Positioned(
+                ),
+                Positioned(
                   left: 19,
                   top: 145,
                   child:
@@ -964,7 +966,8 @@ class Group33791 extends StatelessWidget {
                       ],
                     ),
                   ),
-                ),                                         Positioned(
+                ), 
+                 Positioned(
                   left: 19,
                   top: 15,
                   child: Container(
@@ -1017,7 +1020,7 @@ class Group33837 extends StatelessWidget {
                     decoration: ShapeDecoration(
                       color: Color(0xFFE6740C),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(7)),
-                      shadows: [
+                      shadows: const [
                         BoxShadow(
                           color: Color(0x33000000),
                           blurRadius: 5,
@@ -1068,7 +1071,7 @@ class Group33794 extends StatelessWidget {
                     decoration: ShapeDecoration(
                       color: Color(0xFFE6740C),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(7)),
-                      shadows: [
+                      shadows: const [
                         BoxShadow(
                           color: Color(0x33000000),
                           blurRadius: 5,
@@ -1119,7 +1122,7 @@ class V100001 extends StatelessWidget {
 }
 
 
-class Copyright2022BpmPowerPvtLtdAllRightsReserved extends StatelessWidget {
+class Copyright extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
