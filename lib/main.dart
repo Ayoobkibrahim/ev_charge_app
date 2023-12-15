@@ -1,3 +1,4 @@
+import 'package:ev_charge_app/providers/shared_preferences.dart';
 import 'package:ev_charge_app/routes.dart';
 import 'package:ev_charge_app/screens/Bottom_Nav_Bar.dart';
 // import 'package:ev_charge_app/screens/home_screen.dart';
@@ -10,7 +11,11 @@ import 'package:flutter/material.dart';
 
 
 
-void main()  {
+Future<void> main()  async {
+   WidgetsFlutterBinding.ensureInitialized();
+
+  SharedPreferencesManager sharedPreferencesManager = SharedPreferencesManager(); 
+  await sharedPreferencesManager.init(); 
   // WidgetsFlutterBinding.ensureInitialized(); // Required by FlutterConfig
   // await FlutterConfig.loadEnvVariables();
   runApp(MyApp(),);

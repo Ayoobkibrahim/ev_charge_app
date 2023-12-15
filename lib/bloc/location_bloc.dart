@@ -1,8 +1,6 @@
-import 'dart:async';
 import 'package:ev_charge_app/models/location.dart';
 import 'package:ev_charge_app/services/api_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 
 // Define location events
 abstract class LocationEvent {}

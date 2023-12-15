@@ -1,44 +1,45 @@
-import 'dart:async';
-import 'package:ev_charge_app/services/authentication_service.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ev_charge_app/providers/shared_preferences.dart';
+import 'package:ev_charge_app/services/api_service.dart';
+import 'package:flutter/material.dart';
 
+class AuthBloc extends ChangeNotifier {
+  final ApiService _apiService = ApiService();
 
-// Define authentication events
-abstract class AuthEvent {}
+  Future<void> login(String email, String password) async {
+    try {
+      final response = await _apiService.login(email, password);
 
-class SignInEvent extends AuthEvent {
-  final String phoneNumber;
+      if (response['success'] == true) {
+        String token = response['token'];
 
-  SignInEvent(this.phoneNumber);
-}
+        // Save token using SharedPreferencesManager
+        await SharedPreferencesManager().setString('token', token);
 
-// Define authentication states
-abstract class AuthState {}
-
-class AuthInitial extends AuthState {}
-
-class AuthenticatedState extends AuthState {
-  final String accessToken;
-
-  AuthenticatedState(this.accessToken);
-}
-
-class AuthBloc extends Bloc<AuthEvent, AuthState> {
-  final AuthService authService;
-
-  AuthBloc({required this.authService}) : super(AuthInitial());
-
-  @override
-  Stream<AuthState> mapEventToState(AuthEvent event) async* {
-    if (event is SignInEvent) {
-      try {
-        final accessToken = await authService.signIn(event.phoneNumber);
-        yield AuthenticatedState(accessToken);
-      } catch (e) {
-        yield AuthInitial();
-        // Handle error or show error state
+        // Notify listeners about successful login
+        notifyListeners();
+      } else {
+        throw Exception('Login failed');
       }
+    } catch (e) {
+      print('Login failed: $e');
+      throw e;
     }
-    // Add more conditions for other authentication-related events if needed
+  }
+
+  Future<void> logout() async {
+    try {
+      String? token = await SharedPreferencesManager().getString('token');
+      if (token != null) {
+        await _apiService.logout(token);
+
+        // Clear the saved token from SharedPreferences upon logout
+        await SharedPreferencesManager().remove('token');
+
+        notifyListeners();
+      }
+    } catch (e) {
+      print('Logout failed: $e');
+      throw e;
+    }
   }
 }

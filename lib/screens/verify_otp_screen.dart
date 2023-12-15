@@ -7,11 +7,11 @@ class OTPVerificationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // Add leading icon button for the back arrow
+        
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
-            // Navigate back to the previous screen
+            
             Navigator.pop(context);
           },
         ),
@@ -155,9 +155,7 @@ class Group33857 extends StatelessWidget {
               ),
               child: TextButton(
                 onPressed: () {
-                  // Add logic to handle verification or continue action
-                  // For example, triggering verification or navigation
-                  // Navigator.pushNamed(context, Routes.otpVerification);
+                  
                   Navigator.pushReplacementNamed(context, '/BottomBar');
                 },
                 child: SizedBox(

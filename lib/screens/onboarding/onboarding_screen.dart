@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class OnboardingPages extends StatefulWidget {
   @override
@@ -51,6 +52,7 @@ class _OnboardingPagesState extends State<OnboardingPages> {
         
       ),
       body: Stack(
+        alignment: Alignment.center,
         children: [
           PageView.builder(
             controller: _pageController,
@@ -65,7 +67,7 @@ class _OnboardingPagesState extends State<OnboardingPages> {
             },
           ),
           Positioned(
-            bottom: 20.0,
+            bottom: 30,
             left: 0,
             right: 0,
             child: Row(
@@ -74,8 +76,8 @@ class _OnboardingPagesState extends State<OnboardingPages> {
                 return Padding(
                   padding: EdgeInsets.symmetric(horizontal: 5.0),
                   child: Container(
-                    width: _currentPage == index ? 10.0 : 8.0,
-                    height: 8.0,
+                    width: _currentPage == index ? 13.0 : 8.0,
+                    height: 30.0,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: _currentPage == index
@@ -90,65 +92,62 @@ class _OnboardingPagesState extends State<OnboardingPages> {
         ],
       ),
      
-    
 
-    
-floatingActionButton: _currentPage == 0
-    ? FloatingActionButton(
-        onPressed: () {
-          _pageController.nextPage(
-            duration: Duration(milliseconds: 300),
-            curve: Curves.ease,
-          );
-        },
-        child: Icon(Icons.arrow_forward),
-      )
-    : Stack(
-        children: [
-          Align(
-            alignment: Alignment.bottomLeft,
-            child: FloatingActionButton(
-              onPressed: () {
-                _pageController.previousPage(
-                  duration: Duration(milliseconds: 300),
-                  curve: Curves.ease,
-                );
-              },
-              child: Icon(Icons.arrow_back),
-            ),
-          ),
-          Align(
-            alignment: Alignment.bottomRight,
-            child: FloatingActionButton(
-              onPressed: () {
-                if (_currentPage != pages.length - 1) {
-                  _pageController.nextPage(
+ floatingActionButton: _currentPage == 0
+      ? FloatingActionButton(
+          onPressed: () {
+            _pageController.nextPage(
+              duration: Duration(milliseconds: 300),
+              curve: Curves.ease,
+            );
+          },
+          child: Icon(Icons.arrow_forward_ios,color: Colors.white,),
+          backgroundColor:  Color(0xFFE6740C),
+          shape: CircleBorder(),
+          
+        )
+      : Padding(
+        padding: const EdgeInsets.only(left: 35),
+        child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              FloatingActionButton(
+                onPressed: () {
+                  _pageController.previousPage(
                     duration: Duration(milliseconds: 300),
                     curve: Curves.ease,
                   );
-                } else {
-                  // Handle action on the last page (optional)
-                  print('Reached the last page!');
-
-                  // Navigate to the login screen
-                  Navigator.pushReplacementNamed(context, '/login');
-                }
-              },
-              child: _currentPage != pages.length - 1
-                  ? Icon(Icons.arrow_forward)
-                  : GestureDetector(
-                      onTap: () {
-                        // Navigate to the login screen
-                        Navigator.pushReplacementNamed(context, '/login');
-                      },
-                      child: Icon(Icons.check),
-                    ),
-            ),
+                },
+                child: Icon(Icons.arrow_back_ios,color: Colors.white,),
+                backgroundColor:  Color(0xFFE6740C),
+                shape: CircleBorder(),
+              ),
+              FloatingActionButton(
+                onPressed: () {
+                  if (_currentPage != pages.length - 1) {
+                    _pageController.nextPage(
+                      duration: Duration(milliseconds: 300),
+                      curve: Curves.ease,
+                    );
+                  } else {
+                    print('Reached the last page!');
+                    Navigator.pushReplacementNamed(context, '/login');
+                  }
+                },
+                child: _currentPage != pages.length - 1
+                    ? Icon(Icons.arrow_forward_ios,color: Colors.white,)
+                    : GestureDetector(
+                        onTap: () {
+                          Navigator.pushReplacementNamed(context, '/login');
+                        },
+                        child: Icon(Icons.check,color: Colors.white,),
+                      ),
+                backgroundColor:  Color(0xFFE6740C),
+                shape: CircleBorder(),
+              ),
+            ],
           ),
-        ],
       ),
-
-
 
     );
   }
@@ -160,7 +159,7 @@ floatingActionButton: _currentPage == 0
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(height: 150),
+          SizedBox(height: 100),
            if (_currentPage == 0) Group33668(),
           if (_currentPage == 1) Group35403(),
           if (_currentPage == 2) Group33709(),
@@ -175,14 +174,15 @@ floatingActionButton: _currentPage == 0
           Text(
             page.description,
             textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 15,
-              fontFamily: 'Poppins',
-              fontWeight: FontWeight.w400,
-            ),
+            style: 
+            
+            GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
+                    fontSize: 15,color:Colors.black,fontWeight: FontWeight.w400,
+                     
+              ),
           ),
           SizedBox(height: 80),
+          
         ],
       ),
     );
@@ -209,7 +209,7 @@ class Group33668 extends StatelessWidget {
         Container(
           width: 217,
           height: 122,
-          child: const Stack(
+          child:  Stack(
             children: [
               Positioned(
                 left: 39,
@@ -217,14 +217,13 @@ class Group33668 extends StatelessWidget {
                 child: Text(
                   'Charge your EV',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Color(0xFF2E2E2D),
-                    fontSize: 16,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w500,
-                    height: 0,
-                    letterSpacing: 1,
-                  ),
+                  style:
+                  
+                  GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
+                    fontSize: 16,color:Color(0xFF2E2E2D),fontWeight: FontWeight.w500,letterSpacing: 1,
+                     
+              ),
+                  
                 ),
               ),
               Positioned(
@@ -233,14 +232,12 @@ class Group33668 extends StatelessWidget {
                 child: Text(
                   'At Your',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Color(0xFF2E2E2D),
-                    fontSize: 40,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w700,
-                    height: 0,
-                    letterSpacing: 1,
-                  ),
+                  style:
+                  
+                  GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
+                    fontSize: 40,color:Color(0xFF2E2E2D),fontWeight: FontWeight.w700,letterSpacing: 1,
+                     
+              ),
                 ),
               ),
               Positioned(
@@ -249,14 +246,12 @@ class Group33668 extends StatelessWidget {
                 child: Text(
                   'Fingertips',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Color(0xFFE6740C),
-                    fontSize: 40,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w700,
-                    height: 0,
-                    letterSpacing: 1,
-                  ),
+                  style:
+                
+                  GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
+                    fontSize: 40,color: Color(0xFFE6740C),fontWeight: FontWeight.w700,letterSpacing: 1,
+                     
+              ),
                 ),
               ),
             ],
@@ -272,18 +267,17 @@ class Group33668 extends StatelessWidget {
 class ScanChargeAndGoEffortlessChargingSchemas extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return  Column(
       children: [
         Text(
           'Scan Charge and Go\nEffortless Charging schemas',
           textAlign: TextAlign.center,
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 15,
-            fontFamily: 'Poppins',
-            fontWeight: FontWeight.w400,
-            height: 0,
-          ),
+          style: 
+         
+          GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
+                    fontSize: 15,color:Colors.black,fontWeight: FontWeight.w400,
+                     
+              ),
         ),
       ],
     );
@@ -395,14 +389,12 @@ class Group35403 extends StatelessWidget {
                 child: Text(
                   'Easy EV Navigation',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Color(0xFF2E2E2D),
-                    fontSize: 16,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w500,
-                    height: 0,
-                    letterSpacing: 1,
-                  ),
+                  style: 
+                 
+                  GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
+                    fontSize: 15,color:Color(0xFF2E2E2D),fontWeight: FontWeight.w500,letterSpacing: 1,
+                     
+              ),
                 ),
               ),
               Positioned(
@@ -411,14 +403,12 @@ class Group35403 extends StatelessWidget {
                 child: Text(
                   'Travel Route',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Color(0xFF2E2E2D),
-                    fontSize: 40,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w700,
-                    height: 0,
-                    letterSpacing: 1,
-                  ),
+                  style:
+                  GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
+                    fontSize: 40,color:Color(0xFF2E2E2D),fontWeight: FontWeight.w700,letterSpacing: 1,
+                     
+              ),
+
                 ),
               ),
               Positioned(
@@ -427,14 +417,11 @@ class Group35403 extends StatelessWidget {
                 child: Text(
                   'For Electrics',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Color(0xFFE6740C),
-                    fontSize: 40,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w700,
-                    height: 0,
-                    letterSpacing: 1,
-                  ),
+                  style: 
+                  GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
+                    fontSize: 40,color:Color(0xFFE6740C),fontWeight: FontWeight.w700,letterSpacing: 1,
+                     
+              ),
                 ),
               ),
             ],
@@ -454,13 +441,12 @@ class GrabTheBestInClassDigitalExperienceCraftedForEvDrivers extends StatelessWi
         Text(
           'Grab The Best In Class\nDigital Experience Crafted For\nEV Drivers',
           textAlign: TextAlign.center,
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 15,
-            fontFamily: 'Poppins',
-            fontWeight: FontWeight.w400,
-            height: 0,
-          ),
+          style:
+          
+         GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
+                    fontSize: 15,color:Colors.black,fontWeight: FontWeight.w400,
+                     
+              ),
         ),
       ],
     );
@@ -484,14 +470,12 @@ class Group33709 extends StatelessWidget {
                 child: Text(
                   'interaction with Grid',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Color(0xFF2E2E2D),
-                    fontSize: 16,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w500,
-                    height: 0,
-                    letterSpacing: 1,
-                  ),
+                  style: 
+                  
+                   GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
+                    fontSize: 16,color:Color(0xFF2E2E2D),fontWeight: FontWeight.w500,letterSpacing: 1,
+                     
+              ),
                 ),
               ),
               Positioned(
@@ -500,14 +484,12 @@ class Group33709 extends StatelessWidget {
                 child: Text(
                   'RealTime',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Color(0xFF2E2E2D),
-                    fontSize: 40,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w700,
-                    height: 0,
-                    letterSpacing: 1,
-                  ),
+                  style: 
+                  
+                   GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
+                    fontSize: 40,color:Color(0xFF2E2E2D),fontWeight: FontWeight.w700,letterSpacing: 1,
+                     
+              ),
                 ),
               ),
               Positioned(
@@ -516,14 +498,11 @@ class Group33709 extends StatelessWidget {
                 child: Text(
                   'Monitoring',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Color(0xFFE6740C),
-                    fontSize: 40,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w700,
-                    height: 0,
-                    letterSpacing: 1,
-                  ),
+                  style: 
+                   GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
+                    fontSize: 40,color:Color(0xFFE6740C),fontWeight: FontWeight.w700,letterSpacing: 1,
+                     
+              ),
                 ),
               ),
             ],
@@ -542,13 +521,11 @@ class IntelligentSensibleDevicesAmbichargeSeries extends StatelessWidget {
         Text(
           'Intelligent Sensible Devices\nAmbicharge Series',
           textAlign: TextAlign.center,
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 15,
-            fontFamily: 'Poppins',
-            fontWeight: FontWeight.w400,
-            height: 0,
-          ),
+          style:
+           GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
+                    fontSize: 15,color:Colors.black,fontWeight: FontWeight.w400,
+                     
+              ),
         ),
       ],
     );

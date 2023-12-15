@@ -1,50 +1,73 @@
-import 'dart:async';
-
+import 'dart:typed_data';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'dart:math';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
-
   @override
-  State<HomeScreen> createState() => HomeScreenState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class HomeScreenState extends State<HomeScreen> {
-  final Completer<GoogleMapController> _controller =
-      Completer<GoogleMapController>();
+class _HomeScreenState extends State<HomeScreen> {
+  GoogleMapController? mapController;
+  Set<Marker> markers = {};
 
-  static const CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(37.42796133580664, -122.085749655962),
-    zoom: 14.4746,
-  );
+  @override
+  void initState() {
+    super.initState();
+    _generateRandomMarkers();
+  }
 
-  static const CameraPosition _kLake = CameraPosition(
-      bearing: 192.8334901395799,
-      target: LatLng(37.43296265331129, -122.08832357078792),
-      tilt: 59.440717697143555,
-      zoom: 19.151926040649414);
+  Future<void> _generateRandomMarkers() async {
+    final double initialLatitude = 8.5465282;
+    final double initialLongitude = 76.9151412;
+    final int numberOfMarkers = 30;
+    final double radius = 0.04; // Adjust the radius for random positions
+
+    for (int i = 0; i < numberOfMarkers; i++) {
+      final double lat = initialLatitude +
+          Random().nextDouble() * (2 * radius) - radius;
+      final double lng = initialLongitude +
+          Random().nextDouble() * (2 * radius) - radius;
+
+      // Load the image byte data (change the image path accordingly)
+      ByteData imageData = await rootBundle.load('assets/images/charge.png',);
+
+      // Create a BitmapDescriptor from the image data
+      BitmapDescriptor markerIcon = BitmapDescriptor.fromBytes(
+        Uint8List.view(imageData.buffer),
+      );
+
+      markers.add(
+        Marker(
+          markerId: MarkerId('$i'),
+          position: LatLng(lat, lng),
+          icon: markerIcon,
+          infoWindow: InfoWindow(title: 'Marker $i'),
+        ),
+      );
+    }
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: GoogleMap(
-        mapType: MapType.hybrid,
-        initialCameraPosition: _kGooglePlex,
-        onMapCreated: (GoogleMapController controller) {
-          _controller.complete(controller);
+        onMapCreated: (controller) {
+          mapController = controller;
         },
-      ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: _goToTheLake,
-        label: const Text('To the lake!'),
-        icon: const Icon(Icons.directions_boat),
+        initialCameraPosition: CameraPosition(
+          target: LatLng(8.5465282, 76.9151412),
+          zoom: 12.0,
+        ),
+        markers: markers,
       ),
     );
   }
-
-  Future<void> _goToTheLake() async {
-    final GoogleMapController controller = await _controller.future;
-    await controller.animateCamera(CameraUpdate.newCameraPosition(_kLake));
-  }
 }
+
+
+
+

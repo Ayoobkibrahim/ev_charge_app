@@ -18,17 +18,12 @@ class _ProfilescreenState extends State<Profilescreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp( debugShowCheckedModeBanner: false,
-      // theme: ThemeData.dark().copyWith(
-      //   scaffoldBackgroundColor: const Color.fromARGB(255, 18, 32, 47),
-      // ),
       home: Scaffold(
         body: ListView(
             shrinkWrap: true,
             children: [
-
               SizedBox(height: 20),
               Group33768(),
-
               SizedBox(height: 10),
               Group33829(),
               SizedBox(height: 10),
@@ -46,13 +41,11 @@ class _ProfilescreenState extends State<Profilescreen> {
               SizedBox(height: 10),
               Copyright2022BpmPowerPvtLtdAllRightsReserved(),
               SizedBox(height: 20),
-
         ]),
       ),
     );
   }
 }
-
 
 class Group33768 extends StatelessWidget {
   @override
@@ -73,7 +66,6 @@ class Group33768 extends StatelessWidget {
                   child: Text(
                     '   AYOOB',
                     style:
-
                     GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
                         fontSize: 16,fontWeight: FontWeight.w500
                     ),
@@ -89,7 +81,6 @@ class Group33768 extends StatelessWidget {
                   child: Text(
                     'Hello',
                     style:
-
                     GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
                         fontSize: 12,fontWeight: FontWeight.w500
                     ),
@@ -104,8 +95,6 @@ class Group33768 extends StatelessWidget {
   }
 }
 
-
-
 class Group33829 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -116,34 +105,19 @@ class Group33829 extends StatelessWidget {
           height: 131,
           child: Stack(
             children: [
-              Positioned(
-                left: 0,
-                top: 0,
-                child: Container(
-                  width: 312,
-                  height: 131,
-                  child: Stack(
+                   Stack(
                     children: [
-                      Positioned(
-                        left: 0,
-                        top: 0,
-                        child: Container(
+                         Container(
                           width: 312,
                           height: 131,
                           child: Stack(
                             children: [
-                              Positioned(
-                                left: 0,
-                                top: 0,
-                                child: Container(
+                                Container(
                                   width: 312,
                                   height: 131,
                                   child: Stack(
                                     children: [
-                                      Positioned(
-                                        left: 1,
-                                        top: 0,
-                                        child: Container(
+                                        Container(
                                           width: 311,
                                           height: 131,
                                           decoration: ShapeDecoration(
@@ -159,31 +133,15 @@ class Group33829 extends StatelessWidget {
                                             ],
                                           ),
                                         ),
-                                      ),
-                                      Positioned(
-                                        left: 0,
-                                        top: 0,
-                                        child: Container(
-                                          width: 311,
-                                          height: 131,
-                                          child: const Stack(
-                                            children: [
-                                             
-                                            ],
-                                          ),
-                                        ),
-                                      ),
                                     ],
                                   ),
                                 ),
-                              ),
                               Positioned(
                                 left: 19,
                                 top: 16,
                                 child: Text(
                                   'Total Energy Balance ',
                                   style:
-                                 
                                   GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
                                       fontSize: 10,fontWeight: FontWeight.w500
                                   ),
@@ -195,7 +153,6 @@ class Group33829 extends StatelessWidget {
                                 child: Text(
                                   'Added 100 kWH on 20/11/2022',
                                   style:
-                                  
                                   GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
                                       fontSize: 10,fontWeight: FontWeight.w400
                                   ),
@@ -207,7 +164,6 @@ class Group33829 extends StatelessWidget {
                                 child: Text(
                                   '99999 kWH',
                                   style:
-                                  
                                   GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
                                       fontSize: 20,fontWeight: FontWeight.w700
                                   ),
@@ -229,7 +185,6 @@ class Group33829 extends StatelessWidget {
                                           child: Text(
                                             '55 Points',
                                             style:
-                                           
                                             GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
                                                 fontSize: 12,fontWeight: FontWeight.w500
                                             ),
@@ -257,7 +212,6 @@ class Group33829 extends StatelessWidget {
                             ],
                           ),
                         ),
-                      ),
                       Positioned(
                         left: 21,
                         top: 88,
@@ -323,8 +277,6 @@ class Group33829 extends StatelessWidget {
                       ),
                     ],
                   ),
-                ),
-              ),
               Positioned(
                 left: 203,
                 top: 17,
@@ -425,10 +377,7 @@ class Group33789 extends StatelessWidget {
           height: 264,
           child: Stack(
             children: [
-              Positioned(
-                left: 0,
-                top: 0,
-                child: Container(
+                Container(
                   width: 312,
                   height: 264,
                   decoration: ShapeDecoration(
@@ -444,14 +393,12 @@ class Group33789 extends StatelessWidget {
                     ],
                   ),
                 ),
-              ),
                Positioned(
                 left: 69,
                 top: 92,
                 child: Text(
                   'My Electric Vehicles',
                   style: 
-                  
                   GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
                                 fontSize: 12,fontWeight: FontWeight.w400
                             ),
@@ -464,12 +411,9 @@ class Group33789 extends StatelessWidget {
                 child: Text(
                   'My Payments',
                   style: 
-                  
                   GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
                                 fontSize: 12,fontWeight: FontWeight.w400
                             ),
-                  
-
                 ),
               ),
               Positioned(
@@ -478,7 +422,6 @@ class Group33789 extends StatelessWidget {
                 child: Text(
                   'My Favourite Stations',
                   style:
-                  
                   GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
                                 fontSize: 12,fontWeight: FontWeight.w400
                             ),
@@ -490,7 +433,6 @@ class Group33789 extends StatelessWidget {
                 child: Text(
                   'Alpha Membership',
                   style: 
-                  
                   GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
                                 fontSize: 12,fontWeight: FontWeight.w400
                             ),
@@ -516,17 +458,12 @@ class Group33789 extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Positioned(
-                        left: 11,
-                        top: 13,
-                        child: Container(
+                        Container(
                           width: 16,
                           height: 16.06,
                           child: Stack(children: [
-
                           ]),
                         ),
-                      ),
                     ],
                   ),
                 ),
@@ -534,7 +471,8 @@ class Group33789 extends StatelessWidget {
               Positioned(
                 left: 19,
                 top: 15,
-                child: Container(
+                child: 
+                Container(
                   width: 38.90,
                   height: 38.90,
                   child: Stack(
@@ -558,7 +496,8 @@ class Group33789 extends StatelessWidget {
               Positioned(
                 left: 19,
                 top: 145,
-                child: Container(
+                child:
+                 Container(
                   width: 38.90,
                   height: 38.90,
                   decoration: const ShapeDecoration(
@@ -621,10 +560,7 @@ class Group33790 extends StatelessWidget {
           height: 264,
           child: Stack(
             children: [
-              Positioned(
-                left: 0,
-                top: 0,
-                child: Container(
+                 Container(
                   width: 312,
                   height: 264,
                   decoration: ShapeDecoration(
@@ -640,14 +576,12 @@ class Group33790 extends StatelessWidget {
                     ],
                   ),
                 ),
-              ),
               Positioned(
                 left: 69,
                 top: 92,
                 child: Text(
                   'Raise Complaint',
                   style:
-                  
                   GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
                                 fontSize: 12,fontWeight: FontWeight.w400
                             ),
@@ -659,7 +593,6 @@ class Group33790 extends StatelessWidget {
                 child: Text(
                   'Help',
                   style:
-                 
                   GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
                                 fontSize: 12,fontWeight: FontWeight.w400
                             ),
@@ -671,7 +604,6 @@ class Group33790 extends StatelessWidget {
                 child: Text(
                   'About Us',
                   style: 
-                  
                   GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
                                 fontSize: 12,fontWeight: FontWeight.w400
                             ),
@@ -683,7 +615,6 @@ class Group33790 extends StatelessWidget {
                 child: Text(
                   'Privacy Policy',
                   style:
-                  
                   GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
                                 fontSize: 12,fontWeight: FontWeight.w400
                             ),
@@ -817,10 +748,7 @@ class Group33791 extends StatelessWidget {
           height: 135,
           child: Stack(
             children: [
-              Positioned(
-                left: 0,
-                top: 0,
-                child: Container(
+                Container(
                   width: 312,
                   height: 135,
                   decoration: ShapeDecoration(
@@ -836,14 +764,12 @@ class Group33791 extends StatelessWidget {
                     ],
                   ),
                 ),
-              ),
               Positioned(
                 left: 69,
                 top: 92,
                 child: Text(
                   'My Orders',
                   style:
-                  
                   GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
                                 fontSize: 12,fontWeight: FontWeight.w400
                             ),
@@ -855,13 +781,11 @@ class Group33791 extends StatelessWidget {
                 child: Text(
                   'My Devices',
                   style:
-                  
                   GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
                                 fontSize: 12,fontWeight: FontWeight.w400
                             ),
                 ),
               ),
-
               Positioned(
                 left: 19,
                 top: 80,
@@ -889,7 +813,6 @@ class Group33791 extends StatelessWidget {
                           width: 16,
                           height: 16.06,
                           child: Stack(children: [
-
                               ]),
                         ),
                       ),
@@ -941,10 +864,7 @@ class Group33837 extends StatelessWidget {
           height: 38,
           child: Stack(
             children: [
-              Positioned(
-                left: 0,
-                top: 0,
-                child: Container(
+                Container(
                   width: 312,
                   height: 38,
                   decoration: ShapeDecoration(
@@ -960,7 +880,6 @@ class Group33837 extends StatelessWidget {
                     ],
                   ),
                 ),
-              ),
               Positioned(
                 left: 58,
                 top: 10,
@@ -968,7 +887,6 @@ class Group33837 extends StatelessWidget {
                   'Buy Machines From chargeMOD',
                   textAlign: TextAlign.center,
                   style:
-                  
                   GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
                                 fontSize: 12,fontWeight: FontWeight.w400, color: Colors.white
                             ),
@@ -993,10 +911,7 @@ class Group33794 extends StatelessWidget {
           height: 38,
           child: Stack(
             children: [
-              Positioned(
-                left: 0,
-                top: 0,
-                child: Container(
+                Container(
                   width: 312,
                   height: 38,
                   decoration: ShapeDecoration(
@@ -1012,14 +927,12 @@ class Group33794 extends StatelessWidget {
                     ],
                   ),
                 ),
-              ),
               Positioned(
                 left: 139,
                 top: 11,
                 child: Text(
                   'Logout',
                   style:
-                  
                   GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
                                 fontSize: 12,fontWeight: FontWeight.w400,color: Colors.white
                             ),
@@ -1032,7 +945,6 @@ class Group33794 extends StatelessWidget {
                   width: 16,
                   height: 15.51,
                   child: Stack(children: [
-
                       ]),
                 ),
               ),
@@ -1053,7 +965,6 @@ class V100001 extends StatelessWidget {
         Text(
           'V 1.0.0 (001)',
           style: 
-          
           GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
                                 fontSize: 12,fontWeight: FontWeight.w400
                             ),
@@ -1074,7 +985,6 @@ class Copyright2022BpmPowerPvtLtdAllRightsReserved extends StatelessWidget {
           'Copyright © 2022 BPM Power Pvt Ltd.\nAll rights reserved.',
           textAlign: TextAlign.center,
           style: 
-          
           GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
                                 fontSize: 12,fontWeight: FontWeight.w400
                             ),

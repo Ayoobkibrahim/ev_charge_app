@@ -45,12 +45,12 @@ class _Bottom_BarState extends State<Bottom_Bar> {
               label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: 'Search',
+              icon: Icon(Icons.local_activity),
+              label: 'Activity',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.favorite),
-              label: 'Favorite',
+              icon: Icon(Icons.people_outline_sharp),
+              label: 'Community',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person),

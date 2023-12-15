@@ -12,7 +12,7 @@ class LoginScreen extends StatelessWidget {
           shrinkWrap: true,
           children: [
             Column(
-              mainAxisAlignment: MainAxisAlignment.center, // Center content horizontally and vertically
+              mainAxisAlignment: MainAxisAlignment.center, 
               children: [
                 SizedBox(height: 180,),
                 Group33861(),
@@ -98,145 +98,61 @@ class Group33856 extends StatelessWidget {
         Container(
           width: 289,
           height: 36,
-          child: Stack(
-            children: [
-              Positioned(
-                left: 70,
-                top: 0,
-                child: Container(
-                  width: 219,
-                  height: 36,
-                  child: TextField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8),
-                        borderSide: BorderSide(color: Color(0xFFE4DEDE)),
-                      ),
+          child:
+              Row(
+                children: [
+                  Container(
+                    width: 60,
+                    padding: EdgeInsets.symmetric(horizontal: 7),
+                    alignment: Alignment.center,
+                     child: 
+                     TextField( 
+                      decoration: InputDecoration(
+                        prefixIcon: Image.asset("assets/images/inidan Flag.png",
+                        width: 20,height: 20,
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          borderSide: BorderSide(color:  Color(0xFFE4DEDE))
+                        ),
+                      
+                        ),
+                      
+                          ),
+                  ),
+                   Expanded(
+                    child:
+                    Container(
+                       height: 36,
+                       child: TextField(
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8),
+                            borderSide: BorderSide(color: Color(0xFFE4DEDE)),
+                            
+                       ),
                        filled: true,
-                      fillColor: Colors.white,
-                      hintText: 'Enter phone number',
-                      prefixIcon: Icon(Icons.call_outlined), // Set your prefix icon here
-                    ),
-                    style: 
-                    GoogleFonts.aBeeZee(textStyle: Theme.of(context).textTheme.displayLarge,
-                                  fontSize: 15,
-                                 ),
-                    
-                  ),
-                ),
+                       fillColor: Colors.white,
+                       hintText: 'Enter phone number',
+                       prefixIcon: Icon(Icons.call_outlined),
+                       
+                       contentPadding: EdgeInsets.symmetric(horizontal: 12),
+                       
+                              )   , style: TextStyle(fontSize: 15), 
+                                  ) , 
+                )
+                ) 
+                 ],
+
               ),
-              Positioned(
-                left: 0,
-                top: 0,
-                child: Container(
-                  width: 63,
-                  height: 36,
-                  child: Stack(
-                    children: [
-                      Positioned(
-                        left: 0,
-                        top: 0,
-                        child: Container(
-                          width: 63,
-                          height: 36,
-                          decoration: ShapeDecoration(
-                            color: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              side: BorderSide(width: 1, color: Color(0xFFE4DEDE)),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        left: 8,
-                        top: 7,
-                        child: Container(
-                          width: 32,
-                          height: 22,
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                left: 12.93,
-                                top: 7.79,
-                                child: Container(
-                                  width: 6.46,
-                                  height: 6.46,
-                                  child: Stack(children: [
-                                    // Your prefix icon content goes here
-                                  ]),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ],
-    );
+            
+    )],
+          );
+        
+      
+    
   }
  }
-
-
-
-
-
-
-
-
-// class Group33857 extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Column(
-//       children: [
-//         Container(
-//           width: 289,
-//           height: 38,
-//           child: Stack(
-//             children: [
-//               Positioned(
-//                 left: 0,
-//                 top: 0,
-//                 child: Container(
-//                   width: 289,
-//                   height: 38,
-//                   decoration: ShapeDecoration(
-//                     color: Color(0xFFE6740C),
-//                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
-//                   ),
-//                 ),
-              
-//               ),
-              
-//               Positioned(
-//                 left: 44,
-//                 top: 11,
-//                 child: SizedBox(
-//                   width: 194,
-//                   height: 16,
-//                   child: Text(
-//                     'Sent OTP',
-//                     textAlign: TextAlign.center,
-//                     style:
-//                     GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
-//              fontSize: 16,color: Colors.white
-//             ),
-//                   ),
-//                 ),
-//               ),
-//             ],
-//           ),
-//         ),
-//       ],
-//     );
-//   }
-// }
 
 
 class Group33857 extends StatelessWidget {

@@ -7,7 +7,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     
-    Future.delayed(Duration(seconds: 10000), () {
+    Future.delayed(Duration(seconds: 3), () {
     
       Navigator.of(context).pushReplacementNamed('/OnboardingPages'); 
     });
@@ -17,6 +17,7 @@ class SplashScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            SizedBox(height: 350),
            RichText(
              text: TextSpan(
               children: [
@@ -46,7 +47,8 @@ Text(
                     fontSize: 11,color: Colors.orange,
              ),
 ),
-            SizedBox(height: 20),
+            SizedBox(height: 300),
+             ConnectingToChargemod(),
             
           ],
         ),
@@ -55,4 +57,25 @@ Text(
   }
 }
 
+
+
+class ConnectingToChargemod extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text(
+          'Connecting to chargeMOD',
+          textAlign: TextAlign.center,
+          style: 
+         
+          GoogleFonts.poppins(textStyle: Theme.of(context).textTheme.displayLarge,
+                    fontSize: 10,color:Colors.black,fontWeight: FontWeight.w500,
+                     
+              ),
+        ),
+      ],
+    );
+  }
+}
 

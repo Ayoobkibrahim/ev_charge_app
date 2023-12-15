@@ -1,21 +1,41 @@
-import 'package:ev_charge_app/models/user.dart';
 import 'package:flutter/material.dart';
 
-
 class UserCard extends StatelessWidget {
-  final User user;
+  final String userName;
+  final String userEmail;
+  final String profileImage; // Assuming profile image URL or path
 
-  const UserCard({required this.user});
+  UserCard({
+    required this.userName,
+    required this.userEmail,
+    required this.profileImage,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      // Customize card appearance as per your requirements
+      elevation: 3,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
       child: ListTile(
-        leading: Icon(Icons.person), // Display an icon or user avatar
-        title: Text(user.name),
-        subtitle: Text(user.email),
-        // Add onTap or other functionalities if needed
+        leading: CircleAvatar(
+          radius: 30,
+          backgroundImage: NetworkImage(profileImage), // or AssetImage for local image
+        ),
+        title: Text(
+          userName,
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        subtitle: Text(userEmail),
+        trailing: Icon(Icons.arrow_forward_ios),
+        onTap: () {
+          // Implement onTap functionality
+          // For example, navigate to user details page
+          //  Navigator.push(context, MaterialPageRoute(builder: (context) => UserDetailsPage(user)));
+        },
       ),
     );
   }
