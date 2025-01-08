@@ -22,7 +22,7 @@ class CommunityScreen extends StatelessWidget {
           Card(
             child: Column(
               children: [
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Column(
                    children: [
                      Image.network(
