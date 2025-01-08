@@ -47,7 +47,7 @@ class CommunityScreen extends StatelessWidget {
               fontWeight: FontWeight.w400,),),
                    ],
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Column(
                    children: [
                      Image.network(
